@@ -7,7 +7,7 @@
     <title>Iniciar Sesion</title>
 </head>
 <body>
-    <!--Div Contenedor 3 -->
+    <!--Div Contenedor 1 -->
     <div class="container">
         <div class="row">
             <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque eveniet neque accusantium amet cumque deserunt nulla dolorem veritatis, laborum, illo velit nesciunt et consequuntur! Distinctio officiis adipisci quia ex fugiat!</p>
