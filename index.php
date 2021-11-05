@@ -12,11 +12,12 @@
     <body>
       
       <section class="form-login">
-        <h5>Bienvenido al Sistema de Gestion de Tareas</h5>
-        <input class="comtrols" type="text" name="usuario" value="" placeholder="Usuario">
-        <input class="comtrols" type="password" name="contraseña" value="" placeholder="Contraseña">
-        <input class="buttons" type="submit" name="" value="Ingresar">
-        <p><a href="#">¿Olvidaste tu contraseña?</a></p>
+        <form action="controlador/validarSesion.php" method="POST">
+            <h5>Bienvenido al Sistema de Gestion de Tareas</h5>
+            <input class="comtrols" type="text" name="usuario" value="" placeholder="Usuario">
+            <input class="comtrols" type="password" name="contraseña" value="" placeholder="Contraseña">
+            <input class="btn btn-primary btn-lg" type="submit" name="validar" value="Ingresar">
+        </form> 
 
       </section>
 
