@@ -1,18 +1,25 @@
+<?php
+  include ("Conexion/conexionOracle.php");
+?>
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesion</title>
-</head>
-<body>
-    <!--Div Contenedor 1 -->
-    <div class="container">
-        <div class="row">
-            <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque eveniet neque accusantium amet cumque deserunt nulla dolorem veritatis, laborum, illo velit nesciunt et consequuntur! Distinctio officiis adipisci quia ex fugiat!</p>
-        </div>
-    </div>
-    
-</body>
+<html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <title>Bienvenido al Sistema de Gestion de Tareas</title>
+      <link rel="estilosheet" href="css/estilo.css" /> 
+    </head>
+    <body>
+      
+      <section class="form-login">
+        <h5>Bienvenido al Sistema de Gestion de Tareas</h5>
+        <input class="comtrols" type="text" name="usuario" value="" placeholder="Usuario">
+        <input class="comtrols" type="password" name="contraseña" value="" placeholder="Contraseña">
+        <input class="buttons" type="submit" name="" value="Ingresar">
+        <p><a href="#">¿Olvidaste tu contraseña?</a></p>
+
+      </section>
+
+    </body>
 </html>
+
