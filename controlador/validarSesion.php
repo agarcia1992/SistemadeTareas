@@ -11,11 +11,6 @@
         $result = oci_parse($oracle,$sql);
         oci_execute($result);
         while(($scar = oci_fetch_array($result,OCI_BOTH))!=false){
-            echo "$scar[0] <br>";
-            echo "$scar[1] <br>";
-            echo "$scar[2] <br>";
-            echo "$scar[3] <br>";
-
             if($contraseña==$scar[2]){
                 if(empty($usuario) || empty($contraseña)){
                     
