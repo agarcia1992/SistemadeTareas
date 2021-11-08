@@ -1,18 +1,15 @@
-<?php
-  include ("Conexion/conexionOracle.php");
-?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
       <meta charset="utf-8">
       <title>Bienvenido al Sistema de Gestion de Tareas</title>
-      <link rel="stylesheet" href="css/estilo.css">
+      <link rel="stylesheet" href="../css/estilo.css">
     </head>
     <body>
       <div class="container">
         <div class="form-login">
-          <form action="controlador/validarSesion.php" method="POST">
+          <form action="../controlador/validarSesion.php" method="POST">
               <h5>Bienvenido al Sistema de Gestion de Tareas</h5>
               <input class="comtrols" type="text" name="usuario" value="" placeholder="Usuario">
               <input class="comtrols" type="password" name="contraseña" value="" placeholder="Contraseña">

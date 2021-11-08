@@ -1,30 +1,28 @@
 <?php
-
+    require_once("../Conexion/conexionOracle.php");
     session_start();
+
     $usuario = $_POST["usuario"];
     $contraseña = $_POST["contraseña"];
-
-
     
-        $oracle = oci_connect("bd1","bd1","localhost/XE");
-        $sql = "Select * from usuario where nombre_usuario = '$usuario'";
-        $result = oci_parse($oracle,$sql);
-        oci_execute($result);
-        while(($scar = oci_fetch_array($result,OCI_BOTH))!=false){
-            if($contraseña==$scar[2]){
-                if(empty($usuario) || empty($contraseña)){
-                    
-                    echo "Llenar campo Obligatorio";       
-                    }
-                    else{
-                        echo "Bienvenido"; 
-                    }  
+
+        if(empty($usuario) || empty($contraseña)){
+            echo "Usuario o Contraseña Vacios.";
+              
             }        
             else{
-            echo "Contraseña Incorrecta";
+               
+                $sql = "Select * from usuario where nombre_usuario = '$usuario'";
+                $result = oci_parse($oracle,$sql);
+                oci_execute($result);
+                while(($scar = oci_fetch_array($result,OCI_BOTH))!=false){
+                    if($contraseña==$scar[2]){   
+                            echo "Bienvenido";
+                            header("Location:../vista/menu.php"); 
+                        }
             }
-           
-        }
+        }    
+        
         
        
     
