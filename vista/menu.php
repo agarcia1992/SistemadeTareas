@@ -8,7 +8,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Menú</title>
-	<!--<link rel="stylesheet" href="../css/stl.css">-->
+	<link rel="stylesheet" href="../css/stl.css">
 </head>
 <body>
 <header class="header">
@@ -20,10 +20,9 @@
 				<h1>Logotipo</h1>
 			</div>
 			<nav class="menu">
-				<a href="#">Cerrar Sesion</a>
+				<a href="../controlador/cerrarsesion.php">Cerrar Sesion</a>
 				<a href="#"><?php echo $_SESSION['nombreUsuario'] ?></a>
-				<a href="#">Blog</a>
-				<a href="#">Contacto</a>
+				
 			</nav>
 		</div>
 	</header>
