@@ -1,12 +1,17 @@
+<?php
+	session_start();
+	echo $_SESSION ['nombreUsuario']
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Menù Lateral con Css</title>
-	<link rel="stylesheet" href="stl.css">
+	<title>Menú</title>
+	<!--<link rel="stylesheet" href="../css/stl.css">-->
 </head>
 <body>
-	<header class="header">
+<header class="header">
 		<div class="container">
 		<div class="btn-menu">
 			<label for="btn-menu">☰</label>
@@ -15,14 +20,15 @@
 				<h1>Logotipo</h1>
 			</div>
 			<nav class="menu">
-				<a href="#">Inicio</a>
-				<a href="#">Nosotros</a>
+				<a href="#">Cerrar Sesion</a>
+				<a href="#"><?php echo $_SESSION['nombreUsuario'] ?></a>
 				<a href="#">Blog</a>
 				<a href="#">Contacto</a>
 			</nav>
 		</div>
 	</header>
 	<div class="capa"></div>
+
 <!--	--------------->
 <input type="checkbox" id="btn-menu">
 <div class="container-menu">

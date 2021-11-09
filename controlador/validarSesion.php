@@ -3,10 +3,10 @@
     session_start();
 
     $usuario = $_POST["usuario"];
-    $contraseña = $_POST["contraseña"];
+    $contrasena = $_POST["contrasena"];
     
 
-        if(empty($usuario) || empty($contraseña)){
+        if(empty($usuario) || empty($contrasena)){
             echo "Usuario o Contraseña Vacios.";
               
             }        
@@ -15,10 +15,17 @@
                 $sql = "Select * from usuario where nombre_usuario = '$usuario'";
                 $result = oci_parse($oracle,$sql);
                 oci_execute($result);
+                
                 while(($scar = oci_fetch_array($result,OCI_BOTH))!=false){
-                    if($contraseña==$scar[2]){   
-                            echo "Bienvenido";
+                    if($contrasena==$scar['CONTRASENA_USUARIO']){   
+                            $_SESSION['nombreUsuario']= $scar['NOMBRE_USUARIO'];
+                            $_SESSION['IdUsuario']=$scar['ID_USUARIO'];
+                            echo "Bienvenido <br>"; 
+                            echo $_SESSION['nombreUsuario'];
                             header("Location:../vista/menu.php"); 
+                        }
+                        else{
+                            echo "Contraseña Incorrecta.";
                         }
             }
         }    
