@@ -1,6 +1,5 @@
 <?php
 	session_start();
-
 ?>
 
 <!DOCTYPE html>
@@ -17,11 +16,37 @@
 			<label for="btn-menu">☰</label>
 		</div>
 			<div class="logo">
-				<h1>Logotipo</h1>
+				<h1>Bienvenido al Sistema de Gestion de Tareas</h1>
 			</div>
 			<nav class="menu">
 				<a href="../controlador/cerrarsesion.php">Cerrar Sesion</a>
-				<a href="#"><?php echo $_SESSION['nombreUsuario'] ?></a>
+				<a href="#">Usuario: <?php echo $_SESSION['nombreUsuario'] ?></a>
+				<a href="#"><?php 
+						switch($_SESSION['NombreRol']){
+							case "Director IT":
+								echo $_SESSION['NombreRol'];
+								break;
+							case "Jefe de Infraestructura":
+								echo $_SESSION['NombreRol'];
+								break;
+							case "Jefe de Desarrollo":
+								echo $_SESSION['NombreRol'];
+								break;
+							case "Desarrolladores":
+								echo $_SESSION['NombreRol'];
+								break;
+							case "DBA":
+								echo $_SESSION['NombreRol'];
+								break;
+							case "Consultores":
+								echo $_SESSION['NombreRol'];
+								break;
+							case "Tecnicos":
+								echo $_SESSION['NombreRol'];
+								break;
+							default:
+								echo "Usuario Sin Rol";		
+						}	?></a>
 				
 			</nav>
 		</div>
@@ -33,12 +58,8 @@
 <div class="container-menu">
 	<div class="cont-menu">
 		<nav>
-			<a href="#">Numero 1</a>
-			<a href="#">Numero 2</a>
-			<a href="#">Numero 3</a>
-			<a href="#">Numero 4</a>
-			<a href="#">Numero 5</a>
-			<a href="#">Numero 6</a>
+			<a href="crearTarea.php">Crear Nueva Tarea</a>
+			<a href="#">Consultar Tareas</a>
 		</nav>
 		<label for="btn-menu">✖️</label>
 	</div>

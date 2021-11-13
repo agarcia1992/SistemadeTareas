@@ -17,12 +17,28 @@ body{
     justify-content: center;
     height: 100vh;
 }
+.container-formulario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+
 .form-login{
     background-color: #0a1e35;
     border-radius: 15px;
     padding: 40px;
     opacity: 0.9;
 }
+
+.form-formulario{
+    background-color: #0a1e35;
+    border-radius: 15px;
+    padding: 40px;
+    opacity: 0.9;
+}
+
 h5{
     text-align: center;
     color: white;
