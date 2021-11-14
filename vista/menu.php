@@ -59,7 +59,8 @@
 	<div class="cont-menu">
 		<nav>
 			<a href="crearTarea.php">Crear Nueva Tarea</a>
-			<a href="#">Consultar Tareas</a>
+			<a href="consultarTareas.php">Consultar Tareas</a>
+			<a href="#">Usuario con mas tareas Asignadas</a>
 		</nav>
 		<label for="btn-menu">✖️</label>
 	</div>

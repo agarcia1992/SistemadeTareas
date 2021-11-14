@@ -7,8 +7,9 @@
     $fechaInicio = $_POST["fechaInicio"];
     $fechaFinal = $_POST["fechaFin"];
     $Descripcion = $_POST["descripcion"];
-    $UsuarioRol = $_POST["usuarioRol"];
+    $UsuarioRol = $_POST["usuario"];
     $UsuarioArea = $_POST["usuarioArea"];
+   
     
 
         if(empty($codigo_tarea) || empty($nombre_tarea) || empty($fechaInicio) || empty($Descripcion) || empty($UsuarioRol) || empty($UsuarioArea)) 
@@ -17,11 +18,9 @@
               
             }        
             else{
-               echo $fechaInicio."<br>";
-                
-               echo $fechaFinal;
-                $sql = "INSERT INTO tarea VALUES($codigo_tarea,'$nombre_tarea','$fechaInicio','$fechaFinal','$Descripcion',$UsuarioRol,$UsuarioArea)";
-                $result = oci_parse($oracle,$sql);
+               
+                $sql = "INSERT INTO tarea VALUES($codigo_tarea,'$nombre_tarea',$fechaInicio,$fechaFinal,'$Descripcion',$UsuarioRol,$UsuarioArea,5)";
+                $result = oci_parse($oracle , $sql);
                 oci_execute($result);
                 echo $result;
                 

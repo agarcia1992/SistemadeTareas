@@ -23,22 +23,23 @@
               <input class="comtrols" type="text" name="nombreTarea" value="">
               <br>
               <label for="inicio">Fecha Inicio:</label>
-              <input type="date" name="fechaInicio" min="2018-03-25" max="2050-05-25" />
+              <input type="text" name="fechaInicio" >
               <br>
               <label for="fin">Fecha Fin:</label>
-              <input type="date" name="fechaFin" min="01-01-2000" max="01-01-2050" />
+              <input type="text" name="fechaFin" >
               <br>
               <textarea name="descripcion" rows="10" cols="40"> Escriba una descripción.</textarea>
               <br><br>
               <label for="rol">Rol</label>
-              <select name="usuarioRol" id="usu">
+              <select name="usuario" id="usu">
               <option value ='0'>Seleccione</option>
               <?php
-                $sql = "Select * from rol";
+                $sql = "Select * from usuario";
                 $result =  oci_parse($oracle,$sql);
                 oci_execute($result);
                 while(($scar = oci_fetch_array($result,OCI_BOTH))!=false){
-                    echo '<option value="'.$scar['ID_ROL'].'">'.$scar['NOMBRE_ROL'].'</option>'; 
+                    echo '<option value="'.$scar['ID_USUARIO'].'">'.$scar['NOMBRE_USUARIO'].'</option>'; 
+                
                 }
               ?>
               </select>
@@ -52,12 +53,10 @@
                 $result2 =  oci_parse($oracle,$sql2);
                 oci_execute($result2);
                 while(($scar2 = oci_fetch_array($result2,OCI_BOTH))!=false){
-                    if($scar2['ID_AREA'] == 1 ){
-                        ?> <option value ='0'>Seleccione</option> <?php
-                    }
-                    else{
+                    
+                    
                         echo '<option value="'.$scar2['ID_AREA'].'">'.$scar2['NOMBRE_AREA'].'</option>'; 
-                    }
+                    
                     
                 }
               ?>
