@@ -9,7 +9,8 @@
 	<meta charset="UTF-8">
 	<title>Menú</title>
     <link rel="stylesheet" href="../css/estiloFormulario.css">
-</head>
+    
+</head> 
 <body>
 <div class="container-formulario">
         <div class="form-formulario">
@@ -22,10 +23,10 @@
               <input class="comtrols" type="text" name="nombreTarea" value="">
               <br>
               <label for="inicio">Fecha Inicio:</label>
-              <input class="comtrols" type="date" name="fechaInicio" value="">
+              <input type="date" name="fechaInicio" min="2018-03-25" max="2050-05-25" />
               <br>
               <label for="fin">Fecha Fin:</label>
-              <input class="comtrols" type="date" name="fechaFin" value="" placeholder="Contraseña">
+              <input type="date" name="fechaFin" min="01-01-2000" max="01-01-2050" />
               <br>
               <textarea name="descripcion" rows="10" cols="40"> Escriba una descripción.</textarea>
               <br><br>
@@ -68,5 +69,6 @@
 
     </div>
 </div>
+
 </body>
 </html>

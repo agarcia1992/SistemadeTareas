@@ -2,32 +2,30 @@
     require_once("../Conexion/conexionOracle.php");
     session_start();
 
-    $usuario = $_POST["usuario"];
-    $contrasena = $_POST["contrasena"];
+    $codigo_tarea = $_POST["codigoTarea"];
+    $nombre_tarea = $_POST["nombreTarea"];
+    $fechaInicio = $_POST["fechaInicio"];
+    $fechaFinal = $_POST["fechaFin"];
+    $Descripcion = $_POST["descripcion"];
+    $UsuarioRol = $_POST["usuarioRol"];
+    $UsuarioArea = $_POST["usuarioArea"];
     
 
-        if(empty($usuario) || empty($contrasena)){
-            echo "Usuario o Contraseña Vacios.";
+        if(empty($codigo_tarea) || empty($nombre_tarea) || empty($fechaInicio) || empty($Descripcion) || empty($UsuarioRol) || empty($UsuarioArea)) 
+        {
+            echo "Capos Obligatorios Vacios";
               
             }        
             else{
-               
-                $sql = "Select u.id_usuario, u.nombre_usuario,u.contrasena_usuario,r.nombre_rol from usuario u, rol r where nombre_usuario = '$usuario' and u.id_rol = r.id_rol";
+               echo $fechaInicio."<br>";
+                
+               echo $fechaFinal;
+                $sql = "INSERT INTO tarea VALUES($codigo_tarea,'$nombre_tarea','$fechaInicio','$fechaFinal','$Descripcion',$UsuarioRol,$UsuarioArea)";
                 $result = oci_parse($oracle,$sql);
                 oci_execute($result);
+                echo $result;
                 
-                while(($scar = oci_fetch_array($result,OCI_BOTH))!=false){
-                    if($contrasena==$scar['CONTRASENA_USUARIO']){   
-                            $_SESSION['nombreUsuario']= $scar['NOMBRE_USUARIO'];
-                            $_SESSION['IdUsuario']=$scar['ID_USUARIO'];
-                            $_SESSION['NombreRol']=$scar['NOMBRE_ROL'];
-                            header("Location:../vista/menu.php");    
-                           
-                        }
-                        else{
-                            echo "Contraseña Incorrecta.";
-                        }
-            }
+                header("Location:../vista/menu.php");  
         }    
         
         
